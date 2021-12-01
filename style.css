@@ -1,0 +1,6 @@
+.list {
+    max-width: 1600px;
+    flex-wrap: wrap;
+    display: flex;
+    
+}
