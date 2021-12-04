@@ -4,7 +4,7 @@ import PhotoList from './components/PhotoList';
 import Auth from './components/Auth';
 import PhotoListContainer from './containers/PhotoListContainer';
 import '../style.css';
-
+import DetailsContainer from './containers/DetailsContainer';
 
 // import './App.css';
 
@@ -19,6 +19,8 @@ function App(props) {
         
         <Route exact path='/auth'
             render={()=><Auth/>} />
+        <Route exact path='/details/:photoId?'
+            render={()=><DetailsContainer/>} />
         <Route exact path='/'
         render={()=><PhotoListContainer/>} />
                 

@@ -1,6 +1,6 @@
 import React from "react";
 import PhotoList from "../components/PhotoList";
-import { setInitPhotos } from '../actions/actions';
+import { setAccessToken, setBearerToken, setInitPhotos } from '../actions/actions';
 import { connect } from "react-redux";
 import { loadRandomPhotos } from "../api/api";
 
@@ -13,7 +13,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         setInitPhotos: (photos) => dispatch(setInitPhotos(photos)),
-        loadRandomPhotos: () => dispatch(loadRandomPhotos())
+        setAccessToken: (code) => dispatch(setAccessToken(code)),
+        loadRandomPhotos: (bearerToken) => dispatch(loadRandomPhotos(bearerToken)),
+        setBearerToken: (bearerToken) => dispatch(setBearerToken(bearerToken))
     }
 }
 

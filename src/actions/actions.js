@@ -4,3 +4,30 @@ export const setInitPhotos = (photos) => {
         initPhotos: photos
     }
 }
+
+export const setAccessToken = (code) => {
+    return {
+        type: 'SET_ACCESS_TOKEN',
+        accessToken: code
+    }
+}
+
+export const setBearerToken = (bearerToken) => {
+    return {
+        type: 'SET_BEARER_TOKEN',
+        bearerToken: bearerToken
+    }
+}
+
+export const getLargePhotoUrl = (photoId) => {
+    return {
+        type: 'GET_LARGE_PHOTO_URL',
+        photoId: photoId
+    }
+}
+
+export const toggleIsLiked = () => {
+    return {
+        type: 'TOGGLE_IS_LIKED'
+    }
+}

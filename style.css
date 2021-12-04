@@ -2,5 +2,18 @@
     max-width: 1600px;
     flex-wrap: wrap;
     display: flex;
-    
+    justify-content: space-between;
+}
+
+.dImg img{
+    max-width: 1048px;
+}
+
+iframe
+{
+    display: none;
+}
+
+.imgBlockInList {
+    border: 2px solid black;
 }
