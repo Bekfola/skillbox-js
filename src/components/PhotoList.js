@@ -26,7 +26,7 @@ class PhotoList extends React.Component {
         this.observer = new IntersectionObserver(enteries => {
             let ratio = enteries[0].intersectionRatio;
             console.log('ratio' + ratio);
-            console.log(this.props.state.bearerToken)
+
             if (ratio > 0) this.props.loadRandomPhotos(this.props.state.bearerToken);
         });
     }
@@ -42,22 +42,6 @@ class PhotoList extends React.Component {
             this.props.loadRandomPhotos(this.props.state.bearerToken);
         }
 
-        
-        
-
-        // const code = location.search.split('code=')[1];
-        // if (code) {
-        //     const unsplash = new Unsplash({
-        //         accessKey: "ll-IwcAr6fMAQOsJ4t5B9DGmf6JvcJqmfCvWhKJQD8U",
-        //         secret: "kv_uj_N1rvhWn6GhDu9pIcngLc0rEAh9vZcPvYFgIOg",
-        //         callbackUrl: "http://localhost:8080"
-        //        });
-         
-        //  unsplash.auth.userAuthentication(code)
-        //  .then(res => res.json())
-        //     .then(json =>
-        //     {console.log(json)})
-        // }
     }
 
     componentDidUpdate() {
@@ -118,6 +102,3 @@ class PhotoList extends React.Component {
 
 
 export default PhotoList;
-
-
-//{(this.props.state.photos[0]) ? 

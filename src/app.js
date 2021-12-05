@@ -12,7 +12,7 @@ import DetailsContainer from './containers/DetailsContainer';
 
 
 function App(props) {
-  console.log(props.store);
+  
   return (
 
     <div className='app-wrapper'>

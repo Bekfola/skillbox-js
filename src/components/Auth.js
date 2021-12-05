@@ -61,7 +61,7 @@ location.assign(authenticationUrl);
         
         return (
             <div>
-                <div>Fuck Off</div>
+                <div>Auth</div>
                 <div></div>
             </div>
             )

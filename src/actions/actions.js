@@ -19,6 +19,13 @@ export const setBearerToken = (bearerToken) => {
     }
 }
 
+export const getCurrentPhoto = (photoId) => {
+    return {
+        type: 'GET_CURRENT_PHOTO',
+        photoId: photoId
+    }
+}
+
 export const getLargePhotoUrl = (photoId) => {
     return {
         type: 'GET_LARGE_PHOTO_URL',

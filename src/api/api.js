@@ -14,9 +14,6 @@ export const loadRandomPhotos = (bearerToken) => {
             
         let page = (localStorage.getItem('page')) ? (localStorage.getItem('page')) : 1
 
-        console.log('bearerToken = ');
-        console.log(bearerToken);
-
         if (!bearerToken) {
             unsplash.auth.userAuthentication(code)
                 .then(toJson)
@@ -29,8 +26,7 @@ export const loadRandomPhotos = (bearerToken) => {
                     .then(toJson)
                     .then(json => {
                         dispatch(setInitPhotos(json))
-                        localStorage.setItem('page', ++page)
-                        console.log(json)       
+                        localStorage.setItem('page', ++page) 
                     })
             });
         }
@@ -41,8 +37,7 @@ export const loadRandomPhotos = (bearerToken) => {
                 .then(toJson)
                 .then(json => {
                     dispatch(setInitPhotos(json))
-                    localStorage.setItem('page', ++page)
-                    console.log(json)       
+                    localStorage.setItem('page', ++page)     
                 })
         }
         
@@ -59,15 +54,10 @@ export const likePhoto = (photoId, bearerToken) => {
             callbackUrl: "http://localhost:8080",
             bearerToken: bearerToken
         });
-        
-        console.log('into likePhoto check bearerToken')
-        console.log(bearerToken)
 
             unsplash.photos.likePhoto(photoId)
             .then(toJson)
             .then(json => {
-                console.log('ответ на like:')
-                console.log(json)
                 if (json.photo.liked_by_user) {
                     dispatch(toggleIsLiked())
                 }
@@ -89,8 +79,6 @@ export const unLikePhoto = (photoId, bearerToken) => {
             unsplash.photos.unlikePhoto(photoId)
             .then(toJson)
             .then(json => {
-                console.log('ответ на UNlike:')
-                console.log(json)
                 if (!json.photo.liked_by_user) {
                     dispatch(toggleIsLiked())
                 }

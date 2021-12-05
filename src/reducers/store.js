@@ -5,6 +5,7 @@ let initialState = {
     photos: [],
     accessToken: '',
     bearerToken: '',
+    currentPhoto: {},
     currentPhotoUrl: '',
     isLiked: false
 }
@@ -17,6 +18,8 @@ const reducer = (state = initialState, action) => {
             return {...state, accessToken: action.accessToken};
         case 'SET_BEARER_TOKEN':
             return {...state, bearerToken: action.bearerToken};
+        case 'GET_CURRENT_PHOTO':
+            return {...state, currentPhoto: state.photos.find(el => el.id == action.photoId) };
         case 'GET_LARGE_PHOTO_URL':
             let currentPhoto = state.photos.find(el => el.id == action.photoId);
             return {...state, currentPhotoUrl: currentPhoto.urls.full, isLiked: currentPhoto.liked_by_user};
