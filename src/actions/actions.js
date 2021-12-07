@@ -38,3 +38,17 @@ export const toggleIsLiked = () => {
         type: 'TOGGLE_IS_LIKED'
     }
 }
+
+export const likeCounterPlus = (photoId) => {
+    return {
+        type: 'LIKE_COUNTER_PLUS',
+        photoId: photoId
+    }
+}
+
+export const likeCounterMinus = (photoId) => {
+    return {
+        type: 'LIKE_COUNTER_MINUS',
+        photoId: photoId
+    }
+}

@@ -25,6 +25,32 @@ const reducer = (state = initialState, action) => {
             return {...state, currentPhotoUrl: currentPhoto.urls.full, isLiked: currentPhoto.liked_by_user};
         case 'TOGGLE_IS_LIKED': 
             return {...state, isLiked: !state.isLiked};
+        case 'LIKE_COUNTER_PLUS':
+            let newPhotos = [...state.photos].map(el => {
+                if (action.photoId == el.id) {
+                    el.likes = ++el.likes;
+                    console.log(el);
+                    return (el)
+                }
+                else {
+                    return (el)
+                }
+            });
+
+            return {...state, photos: newPhotos};
+        case 'LIKE_COUNTER_MINUS':
+            let newPhotosM = [...state.photos].map(el => {
+                if (action.photoId == el.id) {
+                    el.likes = --el.likes;
+                    console.log(el);
+                    return (el)
+                }
+                else {
+                    return (el)
+                }
+            });
+
+            return {...state, photos: newPhotosM};
         default:
             return state;
     }

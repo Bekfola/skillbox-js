@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 class Details extends React.Component {
    
 
@@ -31,6 +32,7 @@ class Details extends React.Component {
                 onClick={() => {this.props.likePhoto(this.props.match.params.photoId, this.props.state.bearerToken)}}
                 >like</button>}
                 
+                <NavLink to="/">НАЗАД!!!</NavLink>
                 
             </div>
             )

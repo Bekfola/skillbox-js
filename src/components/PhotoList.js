@@ -45,9 +45,11 @@ class PhotoList extends React.Component {
     }
 
     componentDidUpdate() {
+        if (this.myref.current) {
         setTimeout(() => {
             this.observer.observe(this.myref.current);
         }, 200);
+        }
         
     }
 

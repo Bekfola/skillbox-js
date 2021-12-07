@@ -1,5 +1,5 @@
 import Unsplash, {toJson} from 'unsplash-js';
-import { setBearerToken, setInitPhotos, toggleIsLiked } from '../actions/actions';
+import { setBearerToken, setInitPhotos, toggleIsLiked, likeCounterPlus, likeCounterMinus } from '../actions/actions';
 
 export const loadRandomPhotos = (bearerToken) => {
 
@@ -59,7 +59,8 @@ export const likePhoto = (photoId, bearerToken) => {
             .then(toJson)
             .then(json => {
                 if (json.photo.liked_by_user) {
-                    dispatch(toggleIsLiked())
+                    dispatch(toggleIsLiked());
+                    dispatch(likeCounterPlus(photoId));
                 }
             });
     }
@@ -80,7 +81,8 @@ export const unLikePhoto = (photoId, bearerToken) => {
             .then(toJson)
             .then(json => {
                 if (!json.photo.liked_by_user) {
-                    dispatch(toggleIsLiked())
+                    dispatch(toggleIsLiked());
+                    dispatch(likeCounterMinus(photoId));
                 }
             });
     }
