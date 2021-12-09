@@ -62,7 +62,7 @@ class PhotoList extends React.Component {
     render() {
         return (
             <div>
-                <div>Hello World</div>
+                <div></div>
                 <div><NavLink to="/auth">Авторизоваться</NavLink></div>
                 <p></p>
 

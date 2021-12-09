@@ -1,4 +1,4 @@
-import {Route} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import React from 'react';
 import PhotoList from './components/PhotoList';
 import Auth from './components/Auth';
@@ -16,14 +16,17 @@ function App(props) {
   return (
 
     <div className='app-wrapper'>
-        
-        <Route exact path='/auth'
-            render={()=><Auth/>} />
-        <Route exact path='/details/:photoId?'
-            render={()=><DetailsContainer/>} />
-        <Route exact path='/'
-        render={()=><PhotoListContainer/>} />
-                
+        <Switch>
+        <Route path='/auth'>
+           <Auth />
+        </Route>
+        <Route path='/details/:photoId?'>
+          <DetailsContainer />
+        </Route>
+        <Route path='/'>
+            <PhotoListContainer />
+        </Route>
+        </Switch>
     </div>
 
   );
@@ -47,3 +50,11 @@ export default App;
 //   <Route path='/users' render={()=><UsersContainer />} />
 //   {/*<Profile />   <Dialogs />*/}
 // </div>
+
+
+// <Route exact path='/auth'
+// render={()=><Auth/>} />
+// <Route exact path='/details/:photoId?'
+// render={()=><DetailsContainer/>} />
+// <Route exact path='/'
+// render={()=><PhotoListContainer/>} />

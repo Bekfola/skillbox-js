@@ -29,7 +29,6 @@ const reducer = (state = initialState, action) => {
             let newPhotos = [...state.photos].map(el => {
                 if (action.photoId == el.id) {
                     el.likes = ++el.likes;
-                    console.log(el);
                     return (el)
                 }
                 else {

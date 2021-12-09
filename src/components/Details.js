@@ -14,6 +14,8 @@ class Details extends React.Component {
     render() {
         return (
             <div className='dImg'>
+                <NavLink to="/">Back</NavLink>
+                <br />
                 <img src={this.props.state.currentPhotoUrl}>
                 </img>
                 <br />
@@ -32,7 +34,7 @@ class Details extends React.Component {
                 onClick={() => {this.props.likePhoto(this.props.match.params.photoId, this.props.state.bearerToken)}}
                 >like</button>}
                 
-                <NavLink to="/">НАЗАД!!!</NavLink>
+                
                 
             </div>
             )
