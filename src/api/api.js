@@ -9,7 +9,7 @@ export const loadRandomPhotos = (bearerToken) => {
             const unsplash = new Unsplash({
                 accessKey: "ll-IwcAr6fMAQOsJ4t5B9DGmf6JvcJqmfCvWhKJQD8U",
                 secret: "kv_uj_N1rvhWn6GhDu9pIcngLc0rEAh9vZcPvYFgIOg",
-                callbackUrl: "http://localhost:8080"
+                callbackUrl: "https://bekfola.github.io/skillbox-js"
             });
             
         let page = (localStorage.getItem('page')) ? (localStorage.getItem('page')) : 1
@@ -51,7 +51,7 @@ export const likePhoto = (photoId, bearerToken) => {
         const unsplash = new Unsplash({
             accessKey: "ll-IwcAr6fMAQOsJ4t5B9DGmf6JvcJqmfCvWhKJQD8U",
             secret: "kv_uj_N1rvhWn6GhDu9pIcngLc0rEAh9vZcPvYFgIOg",
-            callbackUrl: "http://localhost:8080",
+            callbackUrl: "https://bekfola.github.io/skillbox-js",
             bearerToken: bearerToken
         });
 
@@ -72,7 +72,7 @@ export const unLikePhoto = (photoId, bearerToken) => {
         const unsplash = new Unsplash({
             accessKey: "ll-IwcAr6fMAQOsJ4t5B9DGmf6JvcJqmfCvWhKJQD8U",
             secret: "kv_uj_N1rvhWn6GhDu9pIcngLc0rEAh9vZcPvYFgIOg",
-            callbackUrl: "http://localhost:8080",
+            callbackUrl: "https://bekfola.github.io/skillbox-js",
             bearerToken: bearerToken
         });
         

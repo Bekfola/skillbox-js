@@ -20,7 +20,7 @@ const unsplash = new Unsplash({
  // Полный адрес страницы авторизации приложения (Redirect URI)
  // Важно: этот адрес обязательно должен быть указан в настройках приложения
 //на сайте Unsplash API/Developers
- callbackUrl: "http://localhost:8080"
+ callbackUrl: "https://bekfola.github.io/skillbox-js"
 });
 // Генерируем адрес страницы аутентификации на unsplash.com
 // и указываем требуемые разрешения (permissions)
