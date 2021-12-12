@@ -1,9 +1,9 @@
 {
   "name": "15",
-  "homepage": ".",
+  "homepage": "https://bekfola.github.io/skillbox-js/",
   "version": "1.0.0",
   "description": "",
-  "private": true,
+  "private": false,
   "browserslist": "> 0.25%, not dead",
   "main": "main.js",
   "scripts": {
