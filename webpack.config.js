@@ -7,7 +7,7 @@ module.exports = {
     path: path.resolve(__dirname, 'build'),
     filename: '[name].js',
   },
-  devtool: 'source-map',
+
   plugins: [
     new HTMLWebpackPlugin({
       title: 'Webpack test',
