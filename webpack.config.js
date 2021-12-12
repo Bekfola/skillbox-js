@@ -5,7 +5,7 @@ module.exports = {
   entry: path.resolve(__dirname, 'src', 'main.js'), //'./src/main.js',
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: '[name].bundle.js',
+    filename: '[name].js',
   },
   devtool: 'source-map',
   plugins: [
