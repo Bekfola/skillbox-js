@@ -15,7 +15,10 @@ const reducer = (state = initialState, action) => {
         case 'SET_INIT_PHOTOS':
             return {...state, photos: [...state.photos, ...action.initPhotos]};
         case 'SET_ACCESS_TOKEN':
+            if (state.bearerToken) {
             return {...state, accessToken: action.accessToken};
+            }
+            else {return state}
         case 'SET_BEARER_TOKEN':
             return {...state, bearerToken: action.bearerToken};
         case 'GET_CURRENT_PHOTO':
