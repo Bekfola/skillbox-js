@@ -20,10 +20,10 @@ const reducer = (state = initialState, action) => {
             }
             else {return state}
         case 'SET_BEARER_TOKEN':
-            if (!state.bearerToken || !action.bearerToken) {
-            return {...state, bearerToken: action.bearerToken};
-            }
-            else {return state}
+            if (!state.bearerToken || !action.bearerToken) {return state}
+            else {
+                return {...state, bearerToken: action.bearerToken};
+                }
         case 'GET_CURRENT_PHOTO':
             return {...state, currentPhoto: state.photos.find(el => el.id == action.photoId) };
         case 'GET_LARGE_PHOTO_URL':
