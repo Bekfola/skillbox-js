@@ -20,7 +20,7 @@ const reducer = (state = initialState, action) => {
             }
             else {return state}
         case 'SET_BEARER_TOKEN':
-            if (!state.bearerToken && !action.bearerToken) {
+            if (!state.bearerToken || !action.bearerToken) {
             return {...state, bearerToken: action.bearerToken};
             }
             else {return state}
