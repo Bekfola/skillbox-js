@@ -31,7 +31,7 @@ export const loadRandomPhotos = (bearerToken) => {
             });
         }
         else {
-            unsplash.auth.setBearerToken(bearerToken);
+            //unsplash.auth.setBearerToken(bearerToken);
 
             unsplash.photos.listPhotos(page)
                 .then(toJson)
