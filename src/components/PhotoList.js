@@ -73,6 +73,7 @@ class PhotoList extends React.Component {
                     e.preventDefault();
                         if (localStorage.getItem('bearerToken')) {
                                 delete localStorage.bearerToken;
+                                this.props.clearPhotos();
                             }
                      
                 }} to="#">Выйти</NavLink></div>

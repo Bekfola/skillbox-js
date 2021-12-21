@@ -1,6 +1,6 @@
 import React from "react";
 import PhotoList from "../components/PhotoList";
-import { setAccessToken, setBearerToken, setInitPhotos } from '../actions/actions';
+import { setAccessToken, setBearerToken, setInitPhotos, clearPhotos } from '../actions/actions';
 import { connect } from "react-redux";
 import { loadRandomPhotos } from "../api/api";
 
@@ -15,7 +15,8 @@ const mapDispatchToProps = (dispatch) => {
         setInitPhotos: (photos) => dispatch(setInitPhotos(photos)),
         setAccessToken: (code) => dispatch(setAccessToken(code)),
         loadRandomPhotos: (bearerToken) => dispatch(loadRandomPhotos(bearerToken)),
-        setBearerToken: (bearerToken) => dispatch(setBearerToken(bearerToken))
+        setBearerToken: (bearerToken) => dispatch(setBearerToken(bearerToken)),
+        clearPhotos: () => dispatch(clearPhotos())
     }
 }
 

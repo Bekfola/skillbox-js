@@ -5,6 +5,12 @@ export const setInitPhotos = (photos) => {
     }
 }
 
+export const clearPhotos = () => {
+    return{
+        type: 'CLEAR_PHOTOS'
+    }
+}
+
 export const setAccessToken = (code) => {
     return {
         type: 'SET_ACCESS_TOKEN',

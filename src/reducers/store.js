@@ -14,6 +14,8 @@ const reducer = (state = initialState, action) => {
     switch(action.type) {
         case 'SET_INIT_PHOTOS':
             return {...state, photos: [...state.photos, ...action.initPhotos]};
+        case 'CLEAR_PHOTOS':
+            return{...state, photos: []};
         case 'SET_ACCESS_TOKEN':
             return {...state, accessToken: action.accessToken};
         case 'SET_BEARER_TOKEN':
