@@ -14,36 +14,36 @@ export const loadRandomPhotos = (bearerToken) => {
             
         let page = (localStorage.getItem('page')) ? (localStorage.getItem('page')) : 1
 
-        if (!bearerToken) {
-            unsplash.auth.userAuthentication(code)
-                .then(toJson)
-                .then(json =>
-                {
-                    unsplash.auth.setBearerToken(json.access_token);
-                    dispatch(setBearerToken(json.access_token));
-                    console.log(json.access_token);
-                    localStorage.setItem('bearerToken', json.access_token);
+            if (!bearerToken) {
+                unsplash.auth.userAuthentication(code)
+                    .then(toJson)
+                    .then(json =>
+                    {
+                        unsplash.auth.setBearerToken(json.access_token);
+                        dispatch(setBearerToken(json.access_token));
+                        console.log(json.access_token);
+                        localStorage.setItem('bearerToken', json.access_token);
 
-                    unsplash.photos.listPhotos(page)
+                        unsplash.photos.listPhotos(page)
+                        .then(toJson)
+                        .then(json => {
+                            dispatch(setInitPhotos(json))
+                            localStorage.setItem('page', ++page) 
+                        })
+                });
+            }
+            else {
+                localStorage.setItem('bearerToken', bearerToken);
+
+                unsplash.auth.setBearerToken(bearerToken);
+
+                unsplash.photos.listPhotos(page)
                     .then(toJson)
                     .then(json => {
                         dispatch(setInitPhotos(json))
-                        localStorage.setItem('page', ++page) 
+                        localStorage.setItem('page', ++page)     
                     })
-            });
-        }
-        else {
-            localStorage.setItem('bearerToken', bearerToken);
-
-            unsplash.auth.setBearerToken(bearerToken);
-
-            unsplash.photos.listPhotos(page)
-                .then(toJson)
-                .then(json => {
-                    dispatch(setInitPhotos(json))
-                    localStorage.setItem('page', ++page)     
-                })
-        }
+            }
         
 
         };
