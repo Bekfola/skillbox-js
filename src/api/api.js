@@ -21,7 +21,8 @@ export const loadRandomPhotos = (bearerToken) => {
                 {
                     unsplash.auth.setBearerToken(json.access_token);
                     dispatch(setBearerToken(json.access_token));
-                 
+                    localStorage.setItem('bearerToken', json.access_toke);
+
                     unsplash.photos.listPhotos(page)
                     .then(toJson)
                     .then(json => {
@@ -31,7 +32,9 @@ export const loadRandomPhotos = (bearerToken) => {
             });
         }
         else {
-            //unsplash.auth.setBearerToken(bearerToken);
+            localStorage.setItem('bearerToken', bearerToken);
+
+            unsplash.auth.setBearerToken(bearerToken);
 
             unsplash.photos.listPhotos(page)
                 .then(toJson)
@@ -87,6 +90,8 @@ export const unLikePhoto = (photoId, bearerToken) => {
             });
     }
 }
+
+
 // export const loadPhotoById = (photoId) => {
 
 //     return (dispatch) => {

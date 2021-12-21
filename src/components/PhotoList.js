@@ -29,6 +29,8 @@ class PhotoList extends React.Component {
 
             if (ratio > 0) this.props.loadRandomPhotos(this.props.state.bearerToken);
         });
+
+
     }
 
     componentDidMount()  {
@@ -42,6 +44,8 @@ class PhotoList extends React.Component {
         if (!this.props.state.photos[0]) { 
             this.props.loadRandomPhotos(this.props.state.bearerToken);
         }
+
+
 
     }
 
@@ -65,6 +69,13 @@ class PhotoList extends React.Component {
             <div>
                 <div></div>
                 <div><NavLink to="/auth">Авторизоваться</NavLink></div>
+                <div><NavLink onClick={(e) => {
+                    e.preventDefault();
+                        if (localStorage.getItem('bearerToken')) {
+                                delete localStorage.bearerToken;
+                            }
+                     
+                }} to="#">Выйти</NavLink></div>
                 <p></p>
 
 
