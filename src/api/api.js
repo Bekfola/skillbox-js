@@ -2,7 +2,9 @@ import Unsplash, {toJson} from 'unsplash-js';
 import { setBearerToken, setInitPhotos, toggleIsLiked, likeCounterPlus, likeCounterMinus } from '../actions/actions';
 
 export const loadRandomPhotos = (bearerToken) => {
-
+    if (localStorage.getItem('bearerToken')) {
+        bearerToken = localStorage.getItem('bearerToken');
+    };
     return (dispatch) => {
         const code = location.search.split('code=')[1];
         if (code) {
