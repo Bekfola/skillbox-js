@@ -1,6 +1,6 @@
 import React from "react";
 import Details from "../components/Details";
-import { getLargePhotoUrl, setAccessToken, setInitPhotos, getCurrentPhoto } from '../actions/actions';
+import { getLargePhotoUrl, setAccessToken, setInitPhotos, getCurrentPhoto, zoomToggle } from '../actions/actions';
 import { connect } from "react-redux";
 import { loadRandomPhotos, likePhoto, unLikePhoto } from "../api/api";
 import { withRouter } from "react-router";
