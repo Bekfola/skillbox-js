@@ -17,7 +17,9 @@ class Details extends React.Component {
         return (
             <div className='dImg'>
                 <NavLink to="/">Back</NavLink>
+                {console.log(styles)}
                 <div >
+                    
                 <img src={this.props.state.currentPhotoUrl} id='photo' className={
                     this.props.state.zoomOut ? styles.zoomOut : styles.zoomIn
                 }
