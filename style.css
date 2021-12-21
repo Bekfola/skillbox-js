@@ -5,12 +5,12 @@
     justify-content: space-between;
 }
 
-.zoomOut{
+.zoom-out{
     max-width: 1048px;
     cursor: zoom-in;
 }
 
-.zoomIn {
+.zoom-in {
     cursor: zoom-out;
 }
 
