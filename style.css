@@ -5,7 +5,7 @@
     justify-content: space-between;
 }
 
-.zoom-out{
+.zoom-out {
     max-width: 1048px;
     cursor: zoom-in;
 }
@@ -14,8 +14,7 @@
     cursor: zoom-out;
 }
 
-iframe
-{
+iframe {
     display: none;
 }
 

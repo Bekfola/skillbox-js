@@ -21,7 +21,7 @@ class Details extends React.Component {
                 <div >
                     
                 <img src={this.props.state.currentPhotoUrl} id='photo' className={
-                    this.props.state.zoomOut ? styles.zoomOut : styles.zoomIn
+                    this.props.state.zoomOut ? 'zoom-out' : 'zoom-in'
                 }
                 onClick={() => this.props.zoomToggle}>
                 </img>
