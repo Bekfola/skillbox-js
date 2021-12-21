@@ -21,7 +21,8 @@ export const loadRandomPhotos = (bearerToken) => {
                 {
                     unsplash.auth.setBearerToken(json.access_token);
                     dispatch(setBearerToken(json.access_token));
-                    localStorage.setItem('bearerToken', json.access_toke);
+                    console.log(json.access_token);
+                    localStorage.setItem('bearerToken', json.access_token);
 
                     unsplash.photos.listPhotos(page)
                     .then(toJson)
