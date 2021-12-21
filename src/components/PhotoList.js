@@ -38,7 +38,6 @@ class PhotoList extends React.Component {
         const code = location.search.split('code=')[1];
         if(code) {
             this.props.setAccessToken(code);
-            console.log(code);
         }
 
         if (!this.props.state.photos[0]) { 

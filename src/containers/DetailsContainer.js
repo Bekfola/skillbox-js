@@ -19,7 +19,8 @@ const mapDispatchToProps = (dispatch) => {
         getCurrentPhoto: (photoId) => dispatch(getCurrentPhoto(photoId)),
         getLargePhotoUrl: (photoId) => dispatch(getLargePhotoUrl(photoId)),
         likePhoto: (photoId, bearerToken) => dispatch(likePhoto(photoId, bearerToken)),
-        unLikePhoto: (photoId, bearerToken) => dispatch(unLikePhoto(photoId, bearerToken))
+        unLikePhoto: (photoId, bearerToken) => dispatch(unLikePhoto(photoId, bearerToken)),
+        zoomToggle: () => dispatch(zoomToggle())
     }
 }
 

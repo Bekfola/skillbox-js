@@ -5,8 +5,13 @@
     justify-content: space-between;
 }
 
-.dImg img{
+.zoomOut{
     max-width: 1048px;
+    cursor: zoom-in;
+}
+
+.zoomIn {
+    cursor: zoom-out;
 }
 
 iframe

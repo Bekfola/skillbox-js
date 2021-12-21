@@ -58,3 +58,9 @@ export const likeCounterMinus = (photoId) => {
         photoId: photoId
     }
 }
+
+export const zoomToggle = () => {
+    return{
+        type: 'ZOOM_TOGGLE'
+    }
+}

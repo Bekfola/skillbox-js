@@ -1,5 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import styles from '../../style.css';
+
 class Details extends React.Component {
    
 
@@ -15,10 +17,13 @@ class Details extends React.Component {
         return (
             <div className='dImg'>
                 <NavLink to="/">Back</NavLink>
-                <br />
-                <img src={this.props.state.currentPhotoUrl}>
+                <div >
+                <img src={this.props.state.currentPhotoUrl} id='photo' className={
+                    this.props.state.zoomOut ? styles.zoomOut : styles.zoomIn
+                }
+                onClick={() => this.props.zoomToggle}>
                 </img>
-                <br />
+                </div>
 
                 имя автора {this.props.state.currentPhotoUrl ? this.props.state.currentPhoto.user.name : ''} <br />
                 и ссылка на его Unsplash-профиль: <br />{this.props.state.currentPhotoUrl ? this.props.state.currentPhoto.user.links.html : ''} <br />

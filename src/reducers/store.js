@@ -7,7 +7,8 @@ let initialState = {
     bearerToken: '',
     currentPhoto: {},
     currentPhotoUrl: '',
-    isLiked: false
+    isLiked: false,
+    zoomOut: true
 }
 
 const reducer = (state = initialState, action) => {
@@ -43,7 +44,6 @@ const reducer = (state = initialState, action) => {
             let newPhotosM = [...state.photos].map(el => {
                 if (action.photoId == el.id) {
                     el.likes = --el.likes;
-                    console.log(el);
                     return (el)
                 }
                 else {
@@ -52,6 +52,8 @@ const reducer = (state = initialState, action) => {
             });
 
             return {...state, photos: newPhotosM};
+        case 'ZOOM_TOGGLE':
+            return {...state, zoomOut: !state.zoomOut}
         default:
             return state;
     }
