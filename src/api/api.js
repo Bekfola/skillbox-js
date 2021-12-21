@@ -53,6 +53,9 @@ export const loadRandomPhotos = (bearerToken) => {
 }
 
 export const likePhoto = (photoId, bearerToken) => {
+    if (localStorage.getItem('bearerToken')) {
+        bearerToken = localStorage.getItem('bearerToken');
+    };
     return (dispatch) => {
         const unsplash = new Unsplash({
             accessKey: "ll-IwcAr6fMAQOsJ4t5B9DGmf6JvcJqmfCvWhKJQD8U",
@@ -74,6 +77,9 @@ export const likePhoto = (photoId, bearerToken) => {
 
 
 export const unLikePhoto = (photoId, bearerToken) => {
+    if (localStorage.getItem('bearerToken')) {
+        bearerToken = localStorage.getItem('bearerToken');
+    };
     return (dispatch) => {
         const unsplash = new Unsplash({
             accessKey: "ll-IwcAr6fMAQOsJ4t5B9DGmf6JvcJqmfCvWhKJQD8U",
