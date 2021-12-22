@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from '../../style.css';
+import Preloader from './common/Preloader';
 
 class Details extends React.Component {
    
@@ -15,9 +16,12 @@ class Details extends React.Component {
 
     render() {
         return (
+            <>
+            <div>
+                {this.props.isFetching ? <Preloader /> : null}
+            </div>
             <div className='dImg'>
                 <NavLink to="/">Back</NavLink>
-                {console.log(styles)}
                 <div >
                     
                 <img src={this.props.state.currentPhotoUrl} id='photo' className={
@@ -44,6 +48,7 @@ class Details extends React.Component {
                 
                 
             </div>
+            </>
             )
     }
 }

@@ -8,7 +8,8 @@ let initialState = {
     currentPhoto: {},
     currentPhotoUrl: '',
     isLiked: false,
-    zoomOut: true
+    zoomOut: true,
+    isFetching: false
 }
 
 const reducer = (state = initialState, action) => {
@@ -53,7 +54,9 @@ const reducer = (state = initialState, action) => {
 
             return {...state, photos: newPhotosM};
         case 'ZOOM_TOGGLE':
-            return {...state, zoomOut: !state.zoomOut}
+            return {...state, zoomOut: !state.zoomOut};
+        case'TOGGLE_IS_FETCHING':
+            return {...state, isFetching: action.isFetching};
         default:
             return state;
     }

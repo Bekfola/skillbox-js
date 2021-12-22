@@ -64,3 +64,10 @@ export const zoomToggle = () => {
         type: 'ZOOM_TOGGLE'
     }
 }
+
+export const toggleIsFetching = (isFetching) => {
+    return {
+        type: 'TOGGLE_IS_FETCHING',
+        isFetching: isFetching
+    }
+}

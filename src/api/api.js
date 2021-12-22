@@ -1,5 +1,5 @@
 import Unsplash, {toJson} from 'unsplash-js';
-import { setBearerToken, setInitPhotos, toggleIsLiked, likeCounterPlus, likeCounterMinus } from '../actions/actions';
+import { setBearerToken, setInitPhotos, toggleIsLiked, likeCounterPlus, likeCounterMinus, toggleIsFetching } from '../actions/actions';
 
 export const loadRandomPhotos = (bearerToken) => {
     if (localStorage.getItem('bearerToken')) {

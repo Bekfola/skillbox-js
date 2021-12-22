@@ -1,6 +1,6 @@
 import React from "react";
 import Details from "../components/Details";
-import { getLargePhotoUrl, setAccessToken, setInitPhotos, getCurrentPhoto, zoomToggle } from '../actions/actions';
+import { getLargePhotoUrl, setAccessToken, setInitPhotos, getCurrentPhoto, zoomToggle, toggleIsFetching } from '../actions/actions';
 import { connect } from "react-redux";
 import { loadRandomPhotos, likePhoto, unLikePhoto } from "../api/api";
 import { withRouter } from "react-router";
@@ -20,7 +20,8 @@ const mapDispatchToProps = (dispatch) => {
         getLargePhotoUrl: (photoId) => dispatch(getLargePhotoUrl(photoId)),
         likePhoto: (photoId, bearerToken) => dispatch(likePhoto(photoId, bearerToken)),
         unLikePhoto: (photoId, bearerToken) => dispatch(unLikePhoto(photoId, bearerToken)),
-        zoomToggle: () => dispatch(zoomToggle())
+        zoomToggle: () => dispatch(zoomToggle()),
+        toggleIsFetching: (isFetching) => dispatch(toggleIsFetching(isFetching))
     }
 }
 
